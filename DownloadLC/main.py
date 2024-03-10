@@ -1,5 +1,4 @@
-import sys
-import lightkurve as lk
+from astropy import units as u
 from astropy.coordinates import SkyCoord
 from . import tess_data
 import argparse
@@ -7,7 +6,9 @@ import argparse
 
 def get_objname(ra, dec):
     coo = SkyCoord(ra=ra, dec=dec, unit=(u.deg, u.deg))
-    return 'J' + coo.to_string(style='hmsdms', sep='', precision=1)
+    strcoo = coo.to_string(style='hmsdms', sep='', precision=2)
+    objname = 'J' + strcoo.replace(' ', '')[:-1]
+    return objname
 
 
 def main():
@@ -25,6 +26,8 @@ def main():
     objname = args.output
     if objname is None:
         objname = get_objname(ra, dec)
+    print('##' * 40)
+    print('objname:', objname)
     outformat = args.format
     surveys = args.survey
     max_retries = args.max_retries
