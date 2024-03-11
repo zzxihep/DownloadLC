@@ -1,4 +1,4 @@
-from oyasassn.client import SkyPatrolClient
+from pyasassn.client import SkyPatrolClient
 from astropy import units as u
 import shutil
 
