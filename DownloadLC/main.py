@@ -2,6 +2,7 @@ from astropy import units as u
 from astropy.coordinates import SkyCoord
 from . import tess_data
 from . import ztf_data
+from . import asassn_data
 import argparse
 
 

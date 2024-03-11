@@ -8,6 +8,8 @@ setup(
     install_requires=[
         'lightkurve',
         'astropy',
+        'pyasassn',
+        'wget'
     ],
     package_dir={'DownloadLC': 'DownloadLC'},
     entry_points={
