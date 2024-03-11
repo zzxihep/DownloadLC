@@ -2,7 +2,7 @@ import wget
 from astropy import units as u
 
 
-def download_ztf_lc(ra, dec, objname, outformat, max_retries, radius=5*u.arcsec):
+def download_ztf_lc(ra, dec, objname, outformat, radius=5*u.arcsec):
     if outformat not in ['csv', 'tsv']:
         raise ValueError('Invalid output format')
     outname_g = objname + '_ztf_g_lc.' + outformat
